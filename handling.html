@@ -21,12 +21,16 @@
                 var city=document.getElementById("lstCities").value;
 
 
-                document.getElementById("lblid").innerText=id;
-                document.getElementById("lblName").innerText=name;
-                document.getElementById("lblprice").innerText=price;
-                document.getElementById("lblMFD").innerText=mfd;
-                document.getElementById("lblstock").innerText=stock;
-                document.getElementById("lblcity").innerText=city;
+                let newRow = '<tr>';
+                newRow += '<td>'+id+'</td>';
+                newRow += '<td>'+name+'</td>';
+                newRow += '<td>'+price+'</td>';
+                newRow += '<td>'+mfd+'</td>';
+                newRow += '<td>'+stock+'</td>';
+                newRow += '<td>'+city+'</td>';
+                newRow += '</tr>';
+
+                document.getElementById("data_table").innerHTML += newRow;
             }
         </script>
     </head>
@@ -62,30 +66,14 @@
             <br>
             <fieldset id="showDetails">
                 <legend>Product Details</legend>
-                <table width="400" border="1">
+                <table width="400" border="1" id="data_table">
                     <tr>
-                        <td>Product Id</td>
-                        <td id="lblid"></td>
-                    </tr>
-                    <tr>
-                        <td> Product Name</td>
-                        <td id="lblName"></td>
-                    </tr>
-                    <tr>
-                        <td>Price</td>
-                        <td id="lblprice"></td>
-                    </tr>
-                    <tr>
-                        <td>Manufactured</td>
-                        <td id="lblMFD"></td>
-                    </tr>
-                    <tr>
-                        <td>Stock</td>
-                        <td id="lblstock"></td>
-                    </tr>
-                    <tr>
-                        <td>Shipped to</td>
-                        <td id="lblcity"></td>
+                        <th>Product Id</th>
+                        <th>Product Name</th>
+                        <th>Price</th>
+                        <th>Manufactured</th>
+                        <th>Stock</th>
+                        <th>Shipped to</th>
                     </tr>
                 </table>
             </fieldset>
